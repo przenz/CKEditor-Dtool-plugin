@@ -1,0 +1,32 @@
+.showhide-wrap {
+  height: 25px
+}
+.showhide {
+  height: 23px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 100px
+}
+.showhide-open {
+  height: auto;
+  width: auto;
+  padding: 4px;
+  border: 1px solid #222;
+  box-shadow: 0 0 10px;
+  background: #eee;
+  z-index: 9
+}
+.showhide-switch {
+  height: 23px;
+  width: auto;
+  margin: 0;
+  font-weight: bold;
+  cursor: pointer;
+  clear: both;
+  top :0
+}
+.showhide-switch:hover {
+  background: lightblue
+}

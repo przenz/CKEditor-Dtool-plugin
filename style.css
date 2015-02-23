@@ -1,0 +1,19 @@
+.showhide {
+  padding: 4px;
+  border: 1px solid #888;
+}
+.showhide-open {
+  height: auto;
+  padding: 4px;
+  border: 1px solid #888;
+  background: #ccc;
+}
+.showhide-switch {
+  margin: 0;
+  font-weight: bold;
+  width: auto;
+  padding: 2px 4px;
+  background-color: #FCFCFC;
+  border: 1px solid #CCC;
+  font: 11px verdana,arial,helvetica,sans-serif;
+}
