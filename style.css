@@ -1,19 +1,33 @@
 .showhide {
-  padding: 4px;
-  border: 1px solid #888;
+  width: 100px;
+  height: 23px;
+  padding: 0;
+  margin: 5px;
+  overflow: hidden
 }
 .showhide-open {
   height: auto;
-  padding: 4px;
-  border: 1px solid #888;
-  background: #ccc;
+  width: auto;
+  padding: 6px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #888;
+  background: #FFF
 }
 .showhide-switch {
+  height: 23px;
+  width: auto;
   margin: 0;
   font-weight: bold;
-  width: auto;
-  padding: 2px 4px;
+  padding: 2px 5px;
   background-color: #FCFCFC;
   border: 1px solid #CCC;
-  font: 11px verdana,arial,helvetica,sans-serif;
+  font: 11px Verdana, Arial, Helvetica, sans-serif
+}
+.showhide-switch-open {
+  width: 100%;
+  margin-bottom: 10px
+}
+.showhide-switch:hover {
+  background: #77CDE9
 }
