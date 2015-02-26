@@ -34,9 +34,9 @@ CKEDITOR.plugins.add( 'dtool',{
                 <br />------------------------------------------ \
                 <br />No \
                 <br /> \
-                <br />IMPACTED DOCUMENTS (FTD, DR, CPI etc) \
+                <br />IMPACTED DOCUMENTS \
                 <br />------------------------------------------ \
-                <br />N/A ' );
+                <br />N/A' );
         }
       });
       
@@ -54,24 +54,29 @@ CKEDITOR.plugins.add( 'dtool',{
           parent.removeClass( "showhide-open" );
           sender.setValue("+ Show");
           sender.removeClass( "showhide-switch-open" );
+          parent.getLast().hide();
         } else { // Showing
           parent.addClass( "showhide-open" );
           sender.setValue("- Hide");
           sender.addClass( "showhide-switch-open" );
+          parent.getLast().show();
         }
       }
 
       function createShowHide() {
         var showHideWrap = editor.document.createElement( 'div', { 'attributes' : { 'class': 'showhide-wrap' } } );
         var showHide = editor.document.createElement( 'div', { 'attributes' : { 'class': 'showhide showhide-open' } } );
-        var showHideSwitch = editor.document.createElement( 'input', 
-                             { 'attributes' : { 'class': 'showhide-switch showhide-switch-open', 'type': 'button', 'value': '- Hide' } } );
+        var showHideContent = editor.document.createElement( 'div' );
+        var showHideSwitch = editor.document.createElement( 'input', { 'attributes' : { 
+                              'class': 'showhide-switch showhide-switch-open', 'type': 'button', 'value': '- Hide' } } );
+        
         showHideSwitch.on( 'click', function( event ) {
           switcherShowHide( event.sender );
         });
         
         showHide.append( showHideSwitch );
-        showHide.appendHtml( '<br />Place your hidden content here.<br />' );
+        showHideContent.appendHtml( 'Place your content here.' );
+        showHide.append( showHideContent );
         showHideWrap.append( showHide );
         return showHideWrap;
       }
@@ -104,14 +109,15 @@ CKEDITOR.plugins.add( 'dtool',{
             curr_month = "0" + curr_month;
           }
           var curr_year = d.getFullYear();
-          var date = curr_year +"-"+ curr_month +"-"+ curr_day;
+          var date = curr_year + "-" + curr_month + "-" + curr_day;
 
           var getSignum = document.querySelectorAll(".logout > strong");
           var signum = getSignum[0].innerHTML.substring(0, 7);
 
-          editor.insertHtml( "<br />&#8226<strong>" + date + "</strong> (" + signum + "): " );
+          editor.insertHtml( "<br />&#8226<strong> " + date + "</strong> (" + signum + "): " );
         }
       });
+      
       editor.ui.addButton( 'dtool-timestamp', {
         label: 'Timestamp',
         command: 'dtool-timestamp',
@@ -119,6 +125,7 @@ CKEDITOR.plugins.add( 'dtool',{
         toolbar: 'insert'
       });
       
+      // CSS
       editor.addContentsCss( pluginDirectory + 'style.css' );
     }
 });

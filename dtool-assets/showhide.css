@@ -2,7 +2,7 @@
   height: 25px
 }
 .showhide {
-  width: 100px;
+  width: 80px;
   height: 23px;
   padding: 0;
   margin: 5px;
@@ -10,8 +10,8 @@
   overflow: hidden
 }
 .showhide-open {
-  height: auto;
   width: auto;
+  height: auto;
   padding: 6px;
   border: 1px solid #555;
   border-radius: 5px;
@@ -21,15 +21,13 @@
 }
 .showhide-switch {
   height: 23px;
-  width: auto;
+  width: 100%;
   margin: 0;
   font-weight: bold;
   cursor: pointer;
-  clear: both;
-  top :0
+  clear: both
 }
 .showhide-switch-open {
-  width: 100%;
   margin-bottom: 10px
 }
 .showhide-switch:hover {
