@@ -19,24 +19,42 @@ CKEDITOR.plugins.add( 'dtool',{
       editor.addCommand( 'dtool-verifTemplate', {
         exec: function( editor ) {
           editor.insertHtml(' \
-                <br />CORRECTION VERIFIED  ON \
-                <br />------------------------------------------ \
-                <br />Project/Branch: MTAS \
-                <br />MTAS code label: FCP \
-                <br />TTCN code label: FCP \
-                <br />Maia \
-                <br /> \
-                <br />CORRECTION VERIFIED BY \
-                <br />------------------------------------------ \
-                <br />Running FT Testcase(s): \
-                <br /> \
-                <br />ADDITIONAL VERIFICATION NEEDED \
-                <br />------------------------------------------ \
-                <br />No \
-                <br /> \
-                <br />IMPACTED DOCUMENTS \
-                <br />------------------------------------------ \
-                <br />N/A' );
+                <br />CORRECTION VERIFIED ON\
+                <br />------------------------------------------\
+                <br />Project/WP name:           <e.g. MTAS 15B - WP123>\
+                <br />WP label                   <e.g. FCP1309964_WP123_010 - Always use the WP label here!>\
+                <br />AS Intergration Label:     <e.g. FCP1309964_TELAS_012 - Always use IB branch label here!>\
+                <br />[AS Design label:]         <e.g. FCP1309964_TELAS_DB_034 - Always use DB branch label here!>\
+                <br /><CompX.Integration Label:> <e.g. FCP1309964_<CompIB>_170 - Always use comp. IB branch label!>\
+                <br />[CompX.Design Label:]      <e.g. FCP1309964_<CompIB>_DB_291 - Always use comp. DB branch label!>\
+                <br /><TTCN code label:>         <e.g. FCP1309964_WP123_FT_077 - Always use FT TEAM branch label here!>\
+                <br /><NSP/Maia/Vega:>           <e.g. NSP6.0/SMALLNOFS, NSP6.1, Large Node>\
+                <br /><Doc. Updated :>           <e.g. CPI, MTAS Performance Measurements, 1/1553-AVA 901 09/7, into Rev.PD2>\
+                <br />\
+                <br />\
+                <br />CORRECTION VERIFIED BY\
+                <br />------------------------------------------\
+                <br /><Running NWST test(s):> \
+                <br /><Running NWFT test(s):> \
+                <br /><Running eST traffic mix for [nn] hours>\
+                <br /><Running FT Testcase(s): TC,TC...>\
+                <br /><Running CT Testcase(s): TC,TC...>\
+                <br /><Review of document: <Doc Num and Rev reviewed>, <Review Result>, <IR number>>\
+                <br /><Other type of verification>\
+                <br />\
+                <br />(Please specify exactly what test cases are executed with what result.\
+                <br />In case of regression, extend it with the exact scope and pass/fail rate.)\
+                <br />\
+                <br />\
+                <br />ADDITIONAL VERIFICATION NEEDED\
+                <br />------------------------------------------\
+                <br />(e.g. Higher level NWFT/NWST/IMS/Live tests are required\
+                <br /> e.g. Common test object functions or eST/FT FW impacted)\
+                <br />\
+                <br />Is there any other activity needed to verify\
+                <br />the solution? (Yes/No):\
+                <br />If yes: <Describe what more is needed>\
+                <br />Have you considered regression if you have impacted FT common test object functions or FT FW?' );
         }
       });
       
